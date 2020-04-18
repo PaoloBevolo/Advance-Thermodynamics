@@ -1,0 +1,47 @@
+2017-04-26
+* fixed a bug occurring when a region was multiplied or divided by a scalar quantity (thanks to Angela Scardigli)
+
+2017-02-28
+* updated all versions numbers to 2017.1
+
+2016-12-27
+* Renamed Shape/Shapes classes to Region/Regions
+
+2016-04-26
+* More robust and correct method to find the triangle a generic (x,y) point belongs to. 
+    
+2016-04-21
+* New method to extract the mesh associated to one or more shape from the 
+  mesh of a give vector of shapes
+
+2016-03-10
+* The library now uses TRIANGLE by Jonathan Richard Shewchuk 
+  https://www.cs.cmu.edu/~quake/triangle.html
+  to generate the triangulation. 
+  This mesh generator replaces MESH2D - Automatic Mesh Generation by Darren Engwirda
+  http://www.mathworks.com/matlabcentral/fileexchange/25555-mesh2d-automatic-mesh-generation
+  Thanks to Stefano Scialò for suggesting Traingle as a replacement of MESH2D.
+* the methods in the mesh2D class have been adapted to work with the new mesh library 
+
+2016-01-12
+* added a third parameter to MyNarginCheck for compatibility with MATLAB 2015b
+
+2015-01-12
+* changed the properties of the mesh2d object. 
+* all the functions/examples have been adapted to the new data structure
+
+2014-06-10
+* removed chop in private/createMesh.m
+* added second column(global nodes numbering) in Me.PeriodicNodes 
+* added 'periodic' option in Me.draw()
+
+2014-06-05
+* modified line 36 in private/createMesh.m
+    -nodes=MyChop(nodes,10-fix(log10(m)));
+    +nodes=MyChop(nodes,24-fix(log2(m)));
+    since the function MyChop expects the number of BINARY digits to keep 
+    (while the original MATLAB chop was asking for decimal digits)
+
+2014-24-05
+* changes: replaced all the for j... and for i... loops using more suitable variables
+* new file: MyNarginchk, replacement for narginchk for compatibility on systems with older MATLAB versions  

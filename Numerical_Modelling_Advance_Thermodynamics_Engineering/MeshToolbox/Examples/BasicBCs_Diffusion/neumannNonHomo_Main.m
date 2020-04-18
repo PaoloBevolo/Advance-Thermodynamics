@@ -1,0 +1,19 @@
+%esempio di soluzione con condizioni di Neumann non omogenee
+Reg=regions.rect('mu',1);
+Reg.Borders.Bc(4)=boundaries.neumann(-5);
+figure;
+Reg.draw('bc');
+Me=mesh2D(Reg,0.003);
+f=@(x,y)zeros(size(x))-20;
+[A,b]=neumannNonHomo_BuildStiff(Me,f);
+%u=A\b;
+%uu=zeros(size(Me.UnknownNodes));
+%uu(Me.UnknownNodes>0)=u;
+uu=Me.copyToAllNodes(A\b);
+figure;
+Me.draw(uu,'hidemesh');
+[ux,uy]=Me.gradient(uu);
+figure;
+Me.draw(ux,'hidemesh');
+figure;
+Me.draw(uy,'hidemesh');

@@ -1,0 +1,19 @@
+Note di stile per l'aggiunta di nuove funzionalità alla libreria
+================================================================
+Errori standard:
+* InvalidInputParameter
+* InvalidNumberOfInputParameters
+* InvalidPairValueInputs
+* ResultNotSaved
+
+Nelle classi, definire nell'ordine:
+* le proprieta' pubbliche (Capital) , 
+* le proprieta' private/protected (Capital), 
+* le enumerazioni
+* il costruttore pubblico (camelCase)
+* i metodi pubblici non statici di output (display) e disegno (draw)
+* i metodi pubblici non statici con operazioni (plus,...)
+* i rimanenti metodi pubblici non statici (camelCase)
+* i metodi pubblici statici (camelCase) partendo dal costruttore
+* i metodi privati/protected (camelCase)
+* gli eventi
