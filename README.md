@@ -1,4 +1,4 @@
-# Numerical_Modelling_MATLAB
+# Numerical Modelling of a DISTRICT HEATING pipeline
 
 Academic project for the Course Numerical Modelling and Advance Engineering Thermodynamics- Master of Science in Mechanical Engineering
 
